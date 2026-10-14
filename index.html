@@ -213,84 +213,114 @@
 
             <!-- Cute SVG Birthday Cat in Flowers -->
             <div class="flex flex-col items-center justify-center">
-                <div class="relative w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center animate-float cursor-pointer group" onclick="triggerHeroCatMeow(event)">
-                    <!-- SVG Cute Pastel Cat with Party Hat & Flowers -->
-                    <svg viewBox="0 0 240 240" class="w-full h-full drop-shadow-md">
-                        <!-- Back floral wreath -->
-                        <circle cx="120" cy="130" r="85" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="4" stroke-dasharray="8 6"/>
-                        <!-- Cute Tail -->
-                        <path class="tail-wag" d="M170 175 Q215 160 205 125 Q195 105 182 125" fill="none" stroke="#FFF" stroke-width="16" stroke-linecap="round"/>
-                        <path class="tail-wag" d="M170 175 Q215 160 205 125 Q195 105 182 125" fill="none" stroke="#FFB3C6" stroke-width="12" stroke-linecap="round"/>
+                <!-- Cute Tilted Polaroid Photo Frame (Auto-switches to SVG Kitty if mayuri.jpg isn't uploaded yet!) -->
+                <div onclick="triggerHeroCatMeow(event)" class="relative bg-white p-3.5 pb-6 rounded-3xl shadow-xl border-2 border-pink-200 transform -rotate-2 hover:rotate-0 transition-all duration-300 cursor-pointer group max-w-[270px] w-full">
+                    <!-- Decorative Washi Tape at Top -->
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-pink-300/75 backdrop-blur-sm rotate-2 rounded shadow-sm border border-white/60 z-20 flex items-center justify-center text-[10px] font-bold text-pink-800 tracking-widest uppercase">
+                        🌸 CLUB 28 STAR 🌸
+                    </div>
 
-                        <!-- Cat Body -->
-                        <ellipse cx="120" cy="165" rx="52" ry="42" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4"/>
-                        <!-- Pink tummy patch -->
-                        <ellipse cx="120" cy="170" rx="30" ry="25" fill="#FFE5EC"/>
+                    <!-- Cute Kitty Ear Badges on Top of Polaroid -->
+                    <div class="absolute -top-2 left-5 text-2xl transform -rotate-12 z-20 select-none">🐱</div>
+                    <div class="absolute -top-2 right-5 text-2xl transform rotate-12 z-20 select-none">🌷</div>
 
-                        <!-- Cat Head -->
-                        <g class="ear-twitch">
-                            <!-- Left Ear -->
-                            <polygon points="68,105 58,52 104,80" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4" stroke-linejoin="round"/>
-                            <polygon points="73,98 66,62 97,82" fill="#FFB3C6"/>
-                            <!-- Right Ear -->
-                            <polygon points="172,105 182,52 136,80" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4" stroke-linejoin="round"/>
-                            <polygon points="167,98 174,62 143,82" fill="#FFB3C6"/>
-                        </g>
+                    <!-- Photo / Fallback SVG Container -->
+                    <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-gradient-to-tr from-pink-50 via-rose-50 to-purple-50 border-2 border-pink-100 flex items-center justify-center">
+                        <!-- Actual Photo of Mayuri (Shown automatically when mayuri.jpg is in the repo) -->
+                        <img id="heroMayuriPhoto" src="mayuri.jpg" alt="Mayuri" class="w-full h-full object-cover hidden"
+                             onload="this.classList.remove('hidden'); document.getElementById('heroCatFallback').classList.add('hidden');"
+                             onerror="this.classList.add('hidden'); document.getElementById('heroCatFallback').classList.remove('hidden');">
 
-                        <!-- Main Head Circle -->
-                        <ellipse cx="120" cy="112" rx="56" ry="46" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4"/>
+                        <!-- Graceful Fallback: Illustrated SVG Birthday Kitty -->
+                        <div id="heroCatFallback" class="w-full h-full flex items-center justify-center p-2 animate-float">
+                            <svg viewBox="0 0 240 240" class="w-full h-full drop-shadow-md">
+                                <!-- Back floral wreath -->
+                                <circle cx="120" cy="130" r="85" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="4" stroke-dasharray="8 6"/>
+                                <!-- Cute Tail -->
+                                <path class="tail-wag" d="M170 175 Q215 160 205 125 Q195 105 182 125" fill="none" stroke="#FFF" stroke-width="16" stroke-linecap="round"/>
+                                <path class="tail-wag" d="M170 175 Q215 160 205 125 Q195 105 182 125" fill="none" stroke="#FFB3C6" stroke-width="12" stroke-linecap="round"/>
 
-                        <!-- Party Hat -->
-                        <polygon points="95,72 120,18 145,72" fill="#FF8FAB" stroke="#FB6F92" stroke-width="3" stroke-linejoin="round"/>
-                        <circle cx="120" cy="18" r="9" fill="#FFD166"/>
-                        <circle cx="115" cy="48" r="4" fill="#FFF"/>
-                        <circle cx="127" cy="58" r="4" fill="#FFD166"/>
-                        <circle cx="108" cy="64" r="3.5" fill="#A8DADC"/>
-                        <text x="120" y="67" text-anchor="middle" fill="#FFF" font-size="13" font-weight="bold" font-family="Fredoka">28</text>
+                                <!-- Cat Body -->
+                                <ellipse cx="120" cy="165" rx="52" ry="42" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4"/>
+                                <!-- Pink tummy patch -->
+                                <ellipse cx="120" cy="170" rx="30" ry="25" fill="#FFE5EC"/>
 
-                        <!-- Big Sparkly Eyes -->
-                        <circle cx="96" cy="110" r="9" fill="#4A3B47"/>
-                        <circle cx="93" cy="107" r="3.5" fill="#FFFFFF"/>
-                        <circle cx="99" cy="113" r="1.5" fill="#FFFFFF"/>
+                                <!-- Cat Head -->
+                                <g class="ear-twitch">
+                                    <!-- Left Ear -->
+                                    <polygon points="68,105 58,52 104,80" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4" stroke-linejoin="round"/>
+                                    <polygon points="73,98 66,62 97,82" fill="#FFB3C6"/>
+                                    <!-- Right Ear -->
+                                    <polygon points="172,105 182,52 136,80" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4" stroke-linejoin="round"/>
+                                    <polygon points="167,98 174,62 143,82" fill="#FFB3C6"/>
+                                </g>
 
-                        <circle cx="144" cy="110" r="9" fill="#4A3B47"/>
-                        <circle cx="141" cy="107" r="3.5" fill="#FFFFFF"/>
-                        <circle cx="147" cy="113" r="1.5" fill="#FFFFFF"/>
+                                <!-- Main Head Circle -->
+                                <ellipse cx="120" cy="112" rx="56" ry="46" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4"/>
 
-                        <!-- Rosy Cheeks -->
-                        <ellipse cx="80" cy="120" rx="9" ry="5" fill="#FF8FAB" opacity="0.65"/>
-                        <ellipse cx="160" cy="120" rx="9" ry="5" fill="#FF8FAB" opacity="0.65"/>
+                                <!-- Party Hat -->
+                                <polygon points="95,72 120,18 145,72" fill="#FF8FAB" stroke="#FB6F92" stroke-width="3" stroke-linejoin="round"/>
+                                <circle cx="120" cy="18" r="9" fill="#FFD166"/>
+                                <circle cx="115" cy="48" r="4" fill="#FFF"/>
+                                <circle cx="127" cy="58" r="4" fill="#FFD166"/>
+                                <circle cx="108" cy="64" r="3.5" fill="#A8DADC"/>
+                                <text x="120" y="67" text-anchor="middle" fill="#FFF" font-size="13" font-weight="bold" font-family="Fredoka">28</text>
 
-                        <!-- Cute Nose & Mouth (w shape) -->
-                        <polygon points="116,116 124,116 120,121" fill="#FB6F92"/>
-                        <path d="M112 123 Q116 128 120 122 Q124 128 128 123" fill="none" stroke="#4A3B47" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Big Sparkly Eyes -->
+                                <circle cx="96" cy="110" r="9" fill="#4A3B47"/>
+                                <circle cx="93" cy="107" r="3.5" fill="#FFFFFF"/>
+                                <circle cx="99" cy="113" r="1.5" fill="#FFFFFF"/>
 
-                        <!-- Whiskers -->
-                        <line x1="55" y1="112" x2="75" y2="115" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="52" y1="122" x2="74" y2="122" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="185" y1="112" x2="165" y2="115" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="188" y1="122" x2="166" y2="122" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="144" cy="110" r="9" fill="#4A3B47"/>
+                                <circle cx="141" cy="107" r="3.5" fill="#FFFFFF"/>
+                                <circle cx="147" cy="113" r="1.5" fill="#FFFFFF"/>
 
-                        <!-- Cute Paws Holding a Flower -->
-                        <ellipse cx="98" cy="155" rx="13" ry="10" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="3"/>
-                        <ellipse cx="142" cy="155" rx="13" ry="10" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="3"/>
+                                <!-- Rosy Cheeks -->
+                                <ellipse cx="80" cy="120" rx="9" ry="5" fill="#FF8FAB" opacity="0.65"/>
+                                <ellipse cx="160" cy="120" rx="9" ry="5" fill="#FF8FAB" opacity="0.65"/>
 
-                        <!-- Flower Crown / Bottom Flowers -->
-                        <g transform="translate(65, 185)">
-                            <circle cx="0" cy="0" r="12" fill="#FFB3C6"/>
-                            <circle cx="0" cy="0" r="5" fill="#FFD166"/>
-                        </g>
-                        <g transform="translate(120, 196)">
-                            <circle cx="0" cy="0" r="14" fill="#E2D4F0"/>
-                            <circle cx="0" cy="0" r="6" fill="#FF8FAB"/>
-                        </g>
-                        <g transform="translate(175, 185)">
-                            <circle cx="0" cy="0" r="12" fill="#FFB3C6"/>
-                            <circle cx="0" cy="0" r="5" fill="#FFD166"/>
-                        </g>
-                    </svg>
-                    <span class="absolute -bottom-1 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow group-hover:scale-110 transition">
-                        👆 Tap Birthday Kitty for a Meow!
+                                <!-- Cute Nose & Mouth (w shape) -->
+                                <polygon points="116,116 124,116 120,121" fill="#FB6F92"/>
+                                <path d="M112 123 Q116 128 120 122 Q124 128 128 123" fill="none" stroke="#4A3B47" stroke-width="3" stroke-linecap="round"/>
+
+                                <!-- Whiskers -->
+                                <line x1="55" y1="112" x2="75" y2="115" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="52" y1="122" x2="74" y2="122" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="185" y1="112" x2="165" y2="115" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="188" y1="122" x2="166" y2="122" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
+
+                                <!-- Cute Paws Holding a Flower -->
+                                <ellipse cx="98" cy="155" rx="13" ry="10" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="3"/>
+                                <ellipse cx="142" cy="155" rx="13" ry="10" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="3"/>
+
+                                <!-- Flower Crown / Bottom Flowers -->
+                                <g transform="translate(65, 185)">
+                                    <circle cx="0" cy="0" r="12" fill="#FFB3C6"/>
+                                    <circle cx="0" cy="0" r="5" fill="#FFD166"/>
+                                </g>
+                                <g transform="translate(120, 196)">
+                                    <circle cx="0" cy="0" r="14" fill="#E2D4F0"/>
+                                    <circle cx="0" cy="0" r="6" fill="#FF8FAB"/>
+                                </g>
+                                <g transform="translate(175, 185)">
+                                    <circle cx="0" cy="0" r="12" fill="#FFB3C6"/>
+                                    <circle cx="0" cy="0" r="5" fill="#FFD166"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Corner Flower Badge -->
+                        <div class="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-xs font-bold text-pink-600 shadow">
+                            🐾 Lv. 28
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Caption -->
+                    <p class="font-heading font-bold text-pink-600 text-sm sm:text-base mt-3 leading-snug">
+                        Level 28 Never Looked So Good 🌸✨ — <span class="gf-name">MAYURI</span>
+                    </p>
+                    <span class="inline-block mt-1 bg-pink-100 text-pink-600 text-[11px] font-bold px-3 py-0.5 rounded-full group-hover:bg-pink-500 group-hover:text-white transition">
+                        👆 Tap for Birthday Meow!
                     </span>
                 </div>
             </div>
@@ -359,8 +389,14 @@
 
                     <!-- Card Holder Photo + Details -->
                     <div class="flex items-center gap-4 bg-white/25 backdrop-blur-md p-4 rounded-2xl border border-white/40 mb-5">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-pink-100 flex items-center justify-center text-4xl shadow-inner border-2 border-white shrink-0">
-                            😻🌸
+                        <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-pink-100 flex items-center justify-center text-4xl shadow-inner border-2 border-white shrink-0 overflow-hidden">
+                            <!-- VIP Card Photo of Mayuri -->
+                            <img id="vipMayuriPhoto" src="mayuri.jpg" alt="Mayuri VIP" class="w-full h-full object-cover hidden"
+                                 onload="this.classList.remove('hidden'); document.getElementById('vipCatFallback').classList.add('hidden');"
+                                 onerror="this.classList.add('hidden'); document.getElementById('vipCatFallback').classList.remove('hidden');">
+                            <span id="vipCatFallback">😻🌸</span>
+                            <!-- Tiny Crown Badge -->
+                            <span class="absolute -bottom-1 -right-1 text-sm bg-white/90 rounded-full px-1 shadow">👑</span>
                         </div>
                         <div class="text-left">
                             <p class="text-xs uppercase text-white/80 font-bold">VIP Member Name</p>
@@ -673,7 +709,10 @@
             // 2. Your name / sign-off:
             yourName: "Mayur 🌸🐾",
 
-            // 3. The 3 paragraphs of the birthday note:
+            // 3. Her photo filename (upload a photo named "mayuri.jpg" to your GitHub repo!)
+            photoUrl: "mayuri.jpg",
+
+            // 4. The 3 paragraphs of the birthday note:
             letterParagraphs: [
                 "Welcome to <strong>Club 28</strong>! 🎉 Even though we joke about leveling up, random back pops, and wanting to be cozy at home by 9:30 PM, the truth is you make 28 look effortlessly cool.",
                 "You deserve all the prettiest flowers, all the cute little cats to pet, and the happiest birthday ever. Thanks for always bringing the best energy, the best laughs, and just being such an awesome person to be around.",
@@ -1093,6 +1132,12 @@
             if (BIRTHDAY_CONFIG.yourName) {
                 const sigEl = document.getElementById('bfSignatureDisplay');
                 if (sigEl) sigEl.textContent = BIRTHDAY_CONFIG.yourName;
+            }
+            if (BIRTHDAY_CONFIG.photoUrl) {
+                const heroImg = document.getElementById('heroMayuriPhoto');
+                const vipImg = document.getElementById('vipMayuriPhoto');
+                if (heroImg) heroImg.src = BIRTHDAY_CONFIG.photoUrl;
+                if (vipImg) vipImg.src = BIRTHDAY_CONFIG.photoUrl;
             }
             if (Array.isArray(BIRTHDAY_CONFIG.letterParagraphs) && BIRTHDAY_CONFIG.letterParagraphs.length > 0) {
                 const bodyEl = document.getElementById('customLetterBody');
