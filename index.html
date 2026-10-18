@@ -174,6 +174,7 @@
             </div>
 
             <div class="flex items-center gap-2 md:gap-4 text-sm font-semibold">
+                <a href="#kitty-reel" class="hidden sm:inline-block text-pink-600 font-bold hover:text-purple-600 transition px-2 py-1">🎬 Birthday Reel</a>
                 <a href="#vip-card" class="hidden sm:inline-block hover:text-pink-600 transition px-2 py-1">VIP Card</a>
                 <a href="#patch-notes" class="hidden sm:inline-block hover:text-pink-600 transition px-2 py-1">v28.0 Patch</a>
                 <a href="#quiz" class="hidden sm:inline-block hover:text-pink-600 transition px-2 py-1">28 Survey</a>
@@ -185,7 +186,7 @@
         </div>
     </nav>
 
-    <header class="relative z-10 max-w-5xl mx-auto px-4 pt-8 pb-16 text-center">
+    <header class="relative z-10 max-w-5xl mx-auto px-4 pt-8 pb-12 text-center">
         <!-- Floating Status Pill -->
         <div class="inline-flex items-center gap-2 bg-white/90 border-2 border-pink-300 px-4 py-1.5 rounded-full shadow-md mb-6 animate-bounce">
             <span class="text-lg">🚨</span>
@@ -213,7 +214,7 @@
 
             <!-- Cute SVG Birthday Cat in Flowers -->
             <div class="flex flex-col items-center justify-center">
-                <!-- Cute Tilted Polaroid Photo Frame (Auto-switches to SVG Kitty if mayuri.jpg isn't uploaded yet!) -->
+                <!-- Cute Tilted Polaroid Photo Frame -->
                 <div onclick="triggerHeroCatMeow(event)" class="relative bg-white p-3.5 pb-6 rounded-3xl shadow-xl border-2 border-pink-200 transform -rotate-2 hover:rotate-0 transition-all duration-300 cursor-pointer group max-w-[270px] w-full">
                     <!-- Decorative Washi Tape at Top -->
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-pink-300/75 backdrop-blur-sm rotate-2 rounded shadow-sm border border-white/60 z-20 flex items-center justify-center text-[10px] font-bold text-pink-800 tracking-widest uppercase">
@@ -226,7 +227,6 @@
 
                     <!-- Photo / Fallback SVG Container -->
                     <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-gradient-to-tr from-pink-50 via-rose-50 to-purple-50 border-2 border-pink-100 flex items-center justify-center">
-                        <!-- Actual Photo of Mayuri (Shown automatically when mayuri.jpg is in the repo) -->
                         <img id="heroMayuriPhoto" src="mayuri.jpg" alt="Mayuri" class="w-full h-full object-cover hidden"
                              onload="this.classList.remove('hidden'); document.getElementById('heroCatFallback').classList.add('hidden');"
                              onerror="this.classList.add('hidden'); document.getElementById('heroCatFallback').classList.remove('hidden');">
@@ -234,66 +234,40 @@
                         <!-- Graceful Fallback: Illustrated SVG Birthday Kitty -->
                         <div id="heroCatFallback" class="w-full h-full flex items-center justify-center p-2 animate-float">
                             <svg viewBox="0 0 240 240" class="w-full h-full drop-shadow-md">
-                                <!-- Back floral wreath -->
                                 <circle cx="120" cy="130" r="85" fill="#FFE5EC" stroke="#FF8FAB" stroke-width="4" stroke-dasharray="8 6"/>
-                                <!-- Cute Tail -->
                                 <path class="tail-wag" d="M170 175 Q215 160 205 125 Q195 105 182 125" fill="none" stroke="#FFF" stroke-width="16" stroke-linecap="round"/>
                                 <path class="tail-wag" d="M170 175 Q215 160 205 125 Q195 105 182 125" fill="none" stroke="#FFB3C6" stroke-width="12" stroke-linecap="round"/>
-
-                                <!-- Cat Body -->
                                 <ellipse cx="120" cy="165" rx="52" ry="42" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4"/>
-                                <!-- Pink tummy patch -->
                                 <ellipse cx="120" cy="170" rx="30" ry="25" fill="#FFE5EC"/>
-
-                                <!-- Cat Head -->
                                 <g class="ear-twitch">
-                                    <!-- Left Ear -->
                                     <polygon points="68,105 58,52 104,80" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4" stroke-linejoin="round"/>
                                     <polygon points="73,98 66,62 97,82" fill="#FFB3C6"/>
-                                    <!-- Right Ear -->
                                     <polygon points="172,105 182,52 136,80" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4" stroke-linejoin="round"/>
                                     <polygon points="167,98 174,62 143,82" fill="#FFB3C6"/>
                                 </g>
-
-                                <!-- Main Head Circle -->
                                 <ellipse cx="120" cy="112" rx="56" ry="46" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="4"/>
-
-                                <!-- Party Hat -->
                                 <polygon points="95,72 120,18 145,72" fill="#FF8FAB" stroke="#FB6F92" stroke-width="3" stroke-linejoin="round"/>
                                 <circle cx="120" cy="18" r="9" fill="#FFD166"/>
                                 <circle cx="115" cy="48" r="4" fill="#FFF"/>
                                 <circle cx="127" cy="58" r="4" fill="#FFD166"/>
                                 <circle cx="108" cy="64" r="3.5" fill="#A8DADC"/>
                                 <text x="120" y="67" text-anchor="middle" fill="#FFF" font-size="13" font-weight="bold" font-family="Fredoka">28</text>
-
-                                <!-- Big Sparkly Eyes -->
                                 <circle cx="96" cy="110" r="9" fill="#4A3B47"/>
                                 <circle cx="93" cy="107" r="3.5" fill="#FFFFFF"/>
                                 <circle cx="99" cy="113" r="1.5" fill="#FFFFFF"/>
-
                                 <circle cx="144" cy="110" r="9" fill="#4A3B47"/>
                                 <circle cx="141" cy="107" r="3.5" fill="#FFFFFF"/>
                                 <circle cx="147" cy="113" r="1.5" fill="#FFFFFF"/>
-
-                                <!-- Rosy Cheeks -->
                                 <ellipse cx="80" cy="120" rx="9" ry="5" fill="#FF8FAB" opacity="0.65"/>
                                 <ellipse cx="160" cy="120" rx="9" ry="5" fill="#FF8FAB" opacity="0.65"/>
-
-                                <!-- Cute Nose & Mouth (w shape) -->
                                 <polygon points="116,116 124,116 120,121" fill="#FB6F92"/>
                                 <path d="M112 123 Q116 128 120 122 Q124 128 128 123" fill="none" stroke="#4A3B47" stroke-width="3" stroke-linecap="round"/>
-
-                                <!-- Whiskers -->
                                 <line x1="55" y1="112" x2="75" y2="115" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
                                 <line x1="52" y1="122" x2="74" y2="122" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
                                 <line x1="185" y1="112" x2="165" y2="115" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
                                 <line x1="188" y1="122" x2="166" y2="122" stroke="#F4ACB7" stroke-width="2.5" stroke-linecap="round"/>
-
-                                <!-- Cute Paws Holding a Flower -->
                                 <ellipse cx="98" cy="155" rx="13" ry="10" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="3"/>
                                 <ellipse cx="142" cy="155" rx="13" ry="10" fill="#FFFFFF" stroke="#F4ACB7" stroke-width="3"/>
-
-                                <!-- Flower Crown / Bottom Flowers -->
                                 <g transform="translate(65, 185)">
                                     <circle cx="0" cy="0" r="12" fill="#FFB3C6"/>
                                     <circle cx="0" cy="0" r="5" fill="#FFD166"/>
@@ -309,13 +283,11 @@
                             </svg>
                         </div>
 
-                        <!-- Corner Flower Badge -->
                         <div class="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-xs font-bold text-pink-600 shadow">
                             🐾 Lv. 28
                         </div>
                     </div>
 
-                    <!-- Polaroid Caption -->
                     <p class="font-heading font-bold text-pink-600 text-sm sm:text-base mt-3 leading-snug">
                         Level 28 Never Looked So Good 🌸✨ — <span class="gf-name">MAYURI</span>
                     </p>
@@ -355,805 +327,376 @@
 
                 <!-- Action Buttons -->
                 <div class="flex flex-wrap justify-center gap-3 mt-4 w-full">
-                    <button id="blowCandleBtn" onclick="blowOutCandles()" class="flex-1 min-w-[160px] bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-heading font-bold py-3 px-5 rounded-2xl shadow-lg hover:shadow-xl active:scale-95 transition flex items-center justify-center gap-2">
-                        <span>🌬️</span> <span id="blowBtnText">Blow Out Candles!</span>
+                    <button id="blowBtn" onclick="blowOutCandles()" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-heading font-semibold px-5 py-2.5 rounded-full shadow-md hover:scale-105 active:scale-95 transition">
+                        💨 Blow Out Candles
                     </button>
-                    <button onclick="fireCelebrationConfetti()" class="bg-purple-500 hover:bg-purple-600 text-white font-heading font-bold py-3 px-4 rounded-2xl shadow-lg active:scale-95 transition flex items-center justify-center gap-1">
-                        <span>🎉</span> <span>Pop Confetti</span>
+                    <button onclick="launchConfetti()" class="bg-purple-100 text-purple-700 border border-purple-300 font-heading font-semibold px-4 py-2.5 rounded-full shadow-sm hover:bg-purple-200 active:scale-95 transition">
+                        🎉 Pop Confetti
+                    </button>
+                    <button onclick="scrollToReelAndPlay()" class="w-full mt-1 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-heading font-bold px-5 py-2.5 rounded-full shadow-lg hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2">
+                        <span>🚪🐱</span> <span>Knock Knock! Play Kitty Cake Delivery Reel</span>
                     </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="vip-card" class="relative z-10 max-w-5xl mx-auto px-4 py-12">
-        <div class="text-center mb-10">
-            <span class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-purple-300">Official Induction</span>
-            <h2 class="text-3xl sm:text-5xl font-heading font-bold text-gray-800 mt-2">Your Official Club 28 VIP Card 💳✨</h2>
-            <p class="text-gray-600 mt-1">Hover or tap your card to inspect its holographic Club 28 authenticity!</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <!-- Interactive 3D Tilt Holographic Card -->
-            <div class="lg:col-span-6 flex justify-center">
-                <div id="holoCard" class="holo-card w-full max-w-md rounded-3xl p-6 sm:p-7 text-white shadow-2xl border-4 border-white/80 cursor-pointer select-none" onclick="stampVipCard()">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <p class="text-xs uppercase tracking-widest font-bold text-white/90">prestigious membership</p>
-                            <h3 class="text-2xl sm:text-3xl font-heading font-bold drop-shadow">CLUB 28 VIP PASS</h3>
-                        </div>
-                        <div class="bg-white/30 backdrop-blur-md p-2 rounded-2xl text-2xl border border-white/50 shadow-inner">
-                            🐱👑
-                        </div>
-                    </div>
-
-                    <!-- Card Holder Photo + Details -->
-                    <div class="flex items-center gap-4 bg-white/25 backdrop-blur-md p-4 rounded-2xl border border-white/40 mb-5">
-                        <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-pink-100 flex items-center justify-center text-4xl shadow-inner border-2 border-white shrink-0 overflow-hidden">
-                            <!-- VIP Card Photo of Mayuri -->
-                            <img id="vipMayuriPhoto" src="mayuri.jpg" alt="Mayuri VIP" class="w-full h-full object-cover hidden"
-                                 onload="this.classList.remove('hidden'); document.getElementById('vipCatFallback').classList.add('hidden');"
-                                 onerror="this.classList.add('hidden'); document.getElementById('vipCatFallback').classList.remove('hidden');">
-                            <span id="vipCatFallback">😻🌸</span>
-                            <!-- Tiny Crown Badge -->
-                            <span class="absolute -bottom-1 -right-1 text-sm bg-white/90 rounded-full px-1 shadow">👑</span>
-                        </div>
-                        <div class="text-left">
-                            <p class="text-xs uppercase text-white/80 font-bold">VIP Member Name</p>
-                            <p class="text-xl sm:text-2xl font-heading font-bold text-white drop-shadow-sm gf-name">MAYURI</p>
-                            <p class="text-xs bg-pink-600/80 inline-block px-2.5 py-0.5 rounded-full mt-1 font-semibold">
-                                Title: Certified Cutie & Chief Cat Officer
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card Stats -->
-                    <div class="grid grid-cols-3 gap-2 text-center bg-black/15 rounded-xl p-2.5 text-xs mb-4">
-                        <div>
-                            <p class="opacity-80">LEVEL</p>
-                            <p class="font-bold text-base">28.0 🌸</p>
-                        </div>
-                        <div class="border-x border-white/25">
-                            <p class="opacity-80">MENTAL AGE</p>
-                            <p class="font-bold text-base">21 Forever</p>
-                        </div>
-                        <div>
-                            <p class="opacity-80">CHARM STAT</p>
-                            <p class="font-bold text-base">9999%</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between text-xs font-semibold pt-1">
-                        <span>ID: #C28-MEOW-VIP-28</span>
-                        <span id="vipStampBadge" class="bg-white text-pink-600 px-3 py-1 rounded-full font-bold shadow">
-                            🐾 Tap to Verify VIP
-                        </span>
-                    </div>
-                </div>
+    <!-- NEW SECTION: Special Birthday Kitty Reel (birthday-cats.mp4) -->
+    <section id="kitty-reel" class="relative z-10 max-w-4xl mx-auto px-4 py-10">
+        <div class="bg-white/90 backdrop-blur-md rounded-3xl border-4 border-pink-200 shadow-xl p-6 sm:p-8 text-center relative overflow-hidden">
+            <div class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 text-xs font-bold px-3.5 py-1 rounded-full border border-pink-300 mb-3">
+                <span>🎬 SPECIAL BIRTHDAY REEL</span>
             </div>
-
-            <div id="patch-notes" class="lg:col-span-6 bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border-4 border-purple-200 shadow-xl">
-                <div class="flex items-center justify-between border-b-2 border-pink-100 pb-4 mb-4">
-                    <div>
-                        <span class="text-xs font-bold bg-green-100 text-green-700 px-2.5 py-1 rounded-full">SYSTEM UPDATE INSTALLED</span>
-                        <h3 class="text-2xl font-heading font-bold text-gray-800 mt-1">Patch Notes: Human v28.0 🛠️🌸</h3>
-                    </div>
-                    <span class="text-3xl">📋🐾</span>
-                </div>
-
-                <ul class="space-y-3 text-sm sm:text-base">
-                    <li class="flex items-start gap-3 bg-pink-50/80 p-3 rounded-2xl border border-pink-200">
-                        <span class="text-xl shrink-0">⬆️</span>
-                        <div>
-                            <span class="font-bold text-pink-700">BUFFED:</span> Radiance, wit, and effortless cuteness increased by <span class="font-bold underline">+999%</span>. Everyone around you remains thoroughly impressed.
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3 bg-purple-50/80 p-3 rounded-2xl border border-purple-200">
-                        <span class="text-xl shrink-0">🐱</span>
-                        <div>
-                            <span class="font-bold text-purple-700">NEW FEATURE:</span> Urge to say <em>"pspspsps look at that kitty!"</em> at every cat on the street increased by 85%.
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3 bg-amber-50/80 p-3 rounded-2xl border border-amber-200">
-                        <span class="text-xl shrink-0">💐</span>
-                        <div>
-                            <span class="font-bold text-amber-700">ADULTING PERK:</span> Unexplained excitement over pretty flowers, iced coffee, good snacks, and canceling plans to stay cozy at 9 PM.
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3 bg-rose-50/80 p-3 rounded-2xl border border-rose-200">
-                        <span class="text-xl shrink-0">⚠️</span>
-                        <div>
-                            <span class="font-bold text-rose-700">KNOWN BUG:</span> Random knee or back sound effects when standing up too fast. Staying out past midnight now requires 2 business days of recovery.
-                        </div>
-                    </li>
-                </ul>
-
-                <!-- Interactive Checkbox Terms -->
-                <div class="mt-5 pt-4 border-t border-pink-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <label class="flex items-center gap-2 cursor-pointer text-sm font-semibold text-gray-700 select-none">
-                        <input type="checkbox" checked onchange="playCuteChime()" class="w-5 h-5 accent-pink-500 rounded cursor-pointer">
-                        <span>I accept unlimited birthday treats, flowers & good vibes for all of age 28</span>
-                    </label>
-                    <span class="text-xs text-pink-500 font-bold">100% Non-Refundable ✨</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="quiz" class="relative z-10 max-w-4xl mx-auto px-4 py-12">
-        <div class="bg-gradient-to-br from-white via-pink-50 to-purple-50 rounded-3xl p-6 sm:p-10 border-4 border-pink-300 shadow-xl text-center relative overflow-hidden">
-            <div class="inline-block bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">
-                Mandatory Club 28 Survey
-            </div>
-            <h2 class="text-2xl sm:text-4xl font-heading font-bold text-gray-800 mb-3">
-                Official Verification Question 🧐🐾
+            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-pink-600 mb-2">
+                Knock Knock! The Birthday Squad Is Here 🚪🐾🎂
             </h2>
-            <p class="text-lg sm:text-xl text-pink-700 font-semibold max-w-xl mx-auto mb-8">
-                "Do you officially admit that you are now 28 years old, AND that you are effortlessly cool, ridiculously charming, and the absolute star of the day?"
+            <p class="text-gray-600 text-sm sm:text-base max-w-xl mx-auto mb-6">
+                Five tiny VIP guests brought individual birthday cakes just to celebrate <span class="font-bold text-pink-600 gf-name">MAYURI</span> turning 28! Turn your sound on! 🔊
             </p>
 
-            <!-- Buttons Playground Container -->
-            <div id="runawayArena" class="relative min-h-[190px] sm:min-h-[160px] flex flex-col sm:flex-row items-center justify-center gap-6 p-4 rounded-2xl bg-white/80 border-2 border-dashed border-pink-300 overflow-hidden">
-                <!-- Growable YES Button -->
-                <button id="yesQuizBtn" onclick="acceptQuizYes()" class="z-20 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-heading font-bold text-xl px-8 py-4 rounded-2xl shadow-lg transition-all duration-200 active:scale-95">
-                    YES! I'm 28 & Fabulous! 🐱🌸✨
-                </button>
-
-                <!-- Runaway NO Button -->
-                <button id="noQuizBtn" onmouseover="dodgeNoButton(event)" ontouchstart="dodgeNoButton(event)" onclick="dodgeNoButton(event)" class="z-20 bg-gray-200 hover:bg-gray-300 text-gray-700 font-heading font-semibold text-base px-5 py-3 rounded-xl shadow transition-all duration-150">
-                    No, I'm still 21 😤
-                </button>
-            </div>
-
-            <p id="dodgeCounterText" class="text-xs sm:text-sm text-purple-700 font-semibold mt-4">
-                💡 Hint: Try clicking the "No, I'm still 21" button if you dare...
-            </p>
-
-            <!-- Victory Banner Hidden Until Clicked -->
-            <div id="quizVictoryBox" class="hidden mt-6 bg-green-100 border-2 border-green-400 text-green-900 p-5 rounded-2xl shadow-md">
-                <p class="text-2xl font-heading font-bold mb-1">🎉 SURVEY COMPLETE! CORRECT ANSWER! 🎉</p>
-                <p class="text-sm sm:text-base">The Council of Kittens & Flowers has certified <span class="gf-name font-bold">Birthday Star</span> as the #1 Coolest & Cutest 28-Year-Old on Earth! 🐾💐</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="quiz" class="relative z-10 max-w-4xl mx-auto px-4 py-12">
-        <div class="bg-gradient-to-br from-white via-pink-50 to-purple-50 rounded-3xl p-6 sm:p-10 border-4 border-pink-300 shadow-xl text-center relative overflow-hidden">
-            <div class="inline-block bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">
-                Mandatory Club 28 Survey
-            </div>
-            <h2 class="text-2xl sm:text-4xl font-heading font-bold text-gray-800 mb-3">
-                Official Verification Question 🧐🐾
-            </h2>
-            <p class="text-lg sm:text-xl text-pink-700 font-semibold max-w-xl mx-auto mb-8">
-                "Do you officially admit that you are now 28 years old, AND that you are the cutest, prettiest, most wonderful girlfriend in the entire universe?"
-            </p>
-
-            <!-- Buttons Playground Container -->
-            <div id="runawayArena" class="relative min-h-[190px] sm:min-h-[160px] flex flex-col sm:flex-row items-center justify-center gap-6 p-4 rounded-2xl bg-white/80 border-2 border-dashed border-pink-300 overflow-hidden">
-                <!-- Growable YES Button -->
-                <button id="yesQuizBtn" onclick="acceptQuizYes()" class="z-20 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-heading font-bold text-xl px-8 py-4 rounded-2xl shadow-lg transition-all duration-200 active:scale-95">
-                    YES! I'm 28 & The Cutest! 🐱💖🌸
-                </button>
-
-                <!-- Runaway NO Button -->
-                <button id="noQuizBtn" onmouseover="dodgeNoButton(event)" ontouchstart="dodgeNoButton(event)" onclick="dodgeNoButton(event)" class="z-20 bg-gray-200 hover:bg-gray-300 text-gray-700 font-heading font-semibold text-base px-5 py-3 rounded-xl shadow transition-all duration-150">
-                    No, I'm still 21 😤
-                </button>
-            </div>
-
-            <p id="dodgeCounterText" class="text-xs sm:text-sm text-purple-700 font-semibold mt-4">
-                💡 Hint: Try clicking the "No, I'm still 21" button if you dare...
-            </p>
-
-            <!-- Victory Banner Hidden Until Clicked -->
-            <div id="quizVictoryBox" class="hidden mt-6 bg-green-100 border-2 border-green-400 text-green-900 p-5 rounded-2xl shadow-md">
-                <p class="text-2xl font-heading font-bold mb-1">🎉 SURVEY COMPLETE! CORRECT ANSWER! 🎉</p>
-                <p class="text-sm sm:text-base">The Council of Kittens & Flowers has certified <span class="gf-name font-bold">MAYURI</span> as the #1 Coolest & Cutest 28-Year-Old on Earth! 🐾💐</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="kitty-zone" class="relative z-10 max-w-5xl mx-auto px-4 py-12">
-        <div class="text-center mb-10">
-            <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-pink-300">Serotonin Boosters</span>
-            <h2 class="text-3xl sm:text-5xl font-heading font-bold text-gray-800 mt-2">Cute Cats & Flower Playground 🐱🌷</h2>
-            <p class="text-gray-600 mt-1">Because every 28th birthday needs unlimited purrs and fresh blooms!</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Left Card: Pet the Birthday Kitty Station -->
-            <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border-4 border-pink-200 shadow-xl flex flex-col items-center text-center justify-between">
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-xs font-bold mb-2">
-                        <span>🐾 PURR ENGINE v2.8</span>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold text-gray-800">Pet the Birthday Kitty!</h3>
-                    <p class="text-sm text-gray-600 mt-1">Every pet gives good luck for your 28th year!</p>
+            <!-- Polaroid-Style Reel Frame -->
+            <div class="relative mx-auto max-w-[320px] bg-gradient-to-b from-pink-50 to-purple-50 p-3.5 pb-6 rounded-3xl shadow-2xl border-4 border-white ring-4 ring-pink-200">
+                <!-- Washi Tape -->
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 bg-pink-300/80 rotate-1 rounded shadow-sm border border-white/60 z-20 flex items-center justify-center text-[10px] font-bold text-pink-900 tracking-widest uppercase">
+                    🐾 5 CAKES FOR 28 🎂
                 </div>
 
-                <!-- Interactive Pettable Cat Box -->
-                <div class="my-6 relative">
-                    <div id="petKittyAvatar" onclick="petTheKitty(event)" class="w-44 h-44 rounded-full bg-gradient-to-tr from-pink-100 via-rose-100 to-purple-100 border-4 border-pink-300 shadow-inner flex flex-col items-center justify-center cursor-pointer select-none transition transform active:scale-90 hover:scale-105">
-                        <div id="kittyFaceEmoji" class="text-7xl transition-transform duration-200">🐱</div>
-                        <span class="text-xs font-bold text-pink-600 mt-2 bg-white/80 px-2.5 py-0.5 rounded-full">Tap to Pet Me! 👋</span>
-                    </div>
-                    <!-- Purr speech bubble -->
-                    <div id="kittyMoodBubble" class=" -top-3 -right-6 absolute bg-pink-500 text-white text-xs font-bold px-3 py-1.5 rounded-2xl shadow-md transform rotate-6">
-                        Purrrr~ 🌸
-                    </div>
+                <div class="relative rounded-2xl overflow-hidden bg-black aspect-[9/16] shadow-inner border-2 border-pink-200">
+                    <video id="bdayReelVideo" class="w-full h-full object-cover" controls playsinline preload="metadata">
+                        <source src="birthday-cats.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
 
-                <div class="w-full bg-pink-50 rounded-2xl p-4 border border-pink-200">
-                    <div class="flex justify-between text-sm font-bold text-pink-700 mb-1">
-                        <span>Total Kitty Pets:</span>
-                        <span id="petCountDisplay" class="text-lg">0 / 28 🐾</span>
-                    </div>
-                    <div class="w-full bg-pink-200 h-3 rounded-full overflow-hidden">
-                        <div id="petProgressBar" class="bg-gradient-to-r from-pink-500 to-purple-500 h-full w-0 transition-all duration-300"></div>
-                    </div>
-                    <p id="kittyUnlockMsg" class="text-xs text-gray-600 mt-2">Pet the kitty 10 times to unlock Supreme Purr Mode!</p>
-                </div>
-            </div>
-
-            <!-- Right Card: Custom Cat & Flower Bouquet Builder -->
-            <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border-4 border-purple-200 shadow-xl flex flex-col items-center text-center justify-between">
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold mb-2">
-                        <span>💐 FLORAL & KITTY GENERATOR</span>
-                    </div>
-                    <h3 class="text-2xl font-heading font-bold text-gray-800">Build a Cat & Flower Bouquet</h3>
-                    <p class="text-sm text-gray-600 mt-1">Generate a custom bouquet stuffed with kittens & birthday compliments!</p>
-                </div>
-
-                <!-- Bouquet Vase Visual Display -->
-                <div class="my-4 w-full bg-gradient-to-b from-purple-50/70 to-pink-50/70 rounded-2xl p-5 border-2 border-dashed border-purple-200 min-h-[190px] flex flex-col items-center justify-center relative">
-                    <div id="bouquetDisplay" class="flex flex-wrap justify-center items-center gap-1 max-w-[240px] text-4xl sm:text-5xl transition-all duration-300">
-                        🌸🐱🌷😻🌺🌻🐾🌹
-                    </div>
-                    <!-- Cute Ribbon Wrap -->
-                    <div class="w-28 h-8 bg-pink-400 rounded-b-2xl border-2 border-white shadow flex items-center justify-center -mt-1">
-                        <span class="text-base">🎀</span>
-                    </div>
-                    <p id="bouquetCompliment" class="text-sm font-semibold text-purple-800 mt-3 italic">
-                        "A bouquet of roses, cherry blossoms, and sleepy kittens for the coolest 28-year-old around!"
-                    </p>
-                </div>
-
-                <button onclick="generateNewBouquet()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-heading font-bold py-3.5 px-6 rounded-2xl shadow-lg active:scale-95 transition flex items-center justify-center gap-2">
-                    <span>💐</span> <span>Generate Fresh Cat Bouquet!</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="relative z-10 max-w-3xl mx-auto px-4 py-12 mb-16">
-        <div class="text-center mb-6">
-            <span class="bg-rose-100 text-rose-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-rose-300">Special Delivery</span>
-            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-800 mt-2">A Birthday Note For You 💌🐾</h2>
-        </div>
-
-        <!-- Envelope Container -->
-        <div class="bg-gradient-to-br from-pink-200 via-rose-100 to-purple-200 p-4 sm:p-8 rounded-3xl shadow-2xl border-4 border-white">
-            <!-- Closed Envelope Preview -->
-            <div id="envelopeClosed" onclick="openBirthdayLetter()" class="bg-white/95 rounded-2xl p-8 text-center cursor-pointer hover:shadow-xl transition group border-2 border-pink-300">
-                <div class="w-20 h-20 mx-auto rounded-full bg-pink-100 border-4 border-pink-300 flex items-center justify-center text-4xl shadow group-hover:scale-110 transition mb-4">
-                    🐾🌸
-                </div>
-                <h3 class="text-2xl font-heading font-bold text-pink-600">To: <span class="gf-name">MAYURI</span> (Club 28 VIP)</h3>
-                <p class="text-sm text-gray-500 mt-1">Sealed with flowers, purrs, and birthday wishes</p>
-                <button class="mt-5 bg-pink-500 group-hover:bg-pink-600 text-white font-heading font-bold px-6 py-2.5 rounded-full shadow transition">
-                    Tap to Open Envelope 💌
-                </button>
-            </div>
-
-            <!-- Opened Letter Content -->
-            <div id="envelopeOpened" class="hidden bg-cream rounded-2xl p-6 sm:p-10 border-2 border-pink-300 shadow-inner relative">
-                <div class="flex justify-between items-center border-b border-pink-200 pb-4 mb-5">
-                    <span class="text-2xl">🌸🐱🌷</span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-pink-500">Official Club 28 Birthday Note</span>
-                    <span class="text-2xl">🐾💐</span>
-                </div>
-
-                <h4 class="text-2xl font-heading font-bold text-pink-600 mb-4">
-                    Happy 28th Birthday, <span class="gf-name">MAYURI</span>! ✨
-                </h4>
-
-                <div id="customLetterBody" class="space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg font-medium">
-                    <p>
-                        Welcome to <strong>Club 28</strong>! 🎉 Even though we joke about leveling up, random back pops, and wanting to be cozy at home by 9:30 PM, the truth is you make 28 look effortlessly cool.
-                    </p>
-                    <p>
-                        You deserve all the prettiest flowers, all the cute little cats to pet, and the happiest birthday ever. Thanks for always bringing the best energy, the best laughs, and just being such an awesome person to be around.
-                    </p>
-                    <p>
-                        Here’s to chapter 28—may it be filled with great coffee, spontaneous fun, delicious food, and lots of friendly kitties crossing your path! Have the best day ever! 🐾💐✨
-                    </p>
-                </div>
-
-                <div class="mt-8 pt-4 border-t border-pink-200 flex items-center justify-between">
-                    <div>
-                        <p class="text-sm text-gray-500">Warmest birthday wishes,</p>
-                        <p id="bfSignatureDisplay" class="text-xl font-heading font-bold text-purple-700">Mayur 🌸🐾</p>
-                    </div>
-                    <button onclick="fireCelebrationConfetti()" class="bg-pink-100 hover:bg-pink-200 text-pink-600 font-bold px-4 py-2 rounded-xl text-sm transition">
-                        Shower Flowers 🌸
+                <div class="mt-4 flex items-center justify-between px-2">
+                    <span class="font-heading font-bold text-pink-600 text-sm">🐱🐱🐱🐱🐱 Birthday Delivery</span>
+                    <button onclick="toggleReelPlay()" id="reelPlayBtn" class="bg-pink-500 hover:bg-pink-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow transition">
+                        ▶️ Play with Sound
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cute Peeking Cat at Bottom Right -->
-    <div onclick="cornerCatSurprise(event)" class="peeking-cat fixed bottom-0 right-4 z-40 cursor-pointer select-none flex flex-col items-center group">
-        <div id="cornerCatBubble" class="bg-white border-2 border-pink-400 text-pink-600 text-xs font-bold px-3 py-1 rounded-full shadow-md mb-1 opacity-0 group-hover:opacity-100 transition">
-            Psst! Happy 28th, MAYURI! 🐾🌸
+    <!-- SECTION 1: Official Club 28 Holographic VIP Membership Card -->
+    <section id="vip-card" class="relative z-10 max-w-4xl mx-auto px-4 py-10">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl sm:text-4xl font-heading font-bold text-purple-800">💳 Official Club 28 VIP Pass</h2>
+            <p class="text-gray-600 text-sm sm:text-base">Hover or tap the card for holographic sparkle!</p>
         </div>
-        <div class="bg-white/95 border-t-4 border-x-4 border-pink-300 rounded-t-3xl px-4 pt-2 pb-1 shadow-lg flex items-center gap-1 text-2xl">
-            <span>🐾</span><span>😺</span><span>🌸</span>
-        </div>
-    </div>
 
-    <footer class="relative z-10 text-center py-8 text-sm text-gray-600 border-t border-pink-200/60 bg-white/40 backdrop-blur-sm">
-        <p class="font-semibold">Made with 🌸 flowers, 🐱 purrs, and birthday magic for <span class="gf-name font-bold text-pink-600">MAYURI</span>'s 28th Birthday!</p>
+        <div class="holo-card max-w-lg mx-auto rounded-3xl p-6 sm:p-8 text-white shadow-2xl border-4 border-white/80 cursor-pointer" onclick="launchConfetti()">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <p class="text-xs uppercase tracking-widest font-bold bg-white/25 px-3 py-1 rounded-full inline-block mb-1">Lifetime Cute Member</p>
+                    <h3 class="text-2xl sm:text-3xl font-heading font-bold drop-shadow">CLUB 28 PASS 🌸🐾</h3>
+                </div>
+                <div class="text-4xl">👑</div>
+            </div>
+
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/40 mb-5">
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                        <p class="text-xs uppercase opacity-80">VIP Star Name</p>
+                        <p class="font-heading font-bold text-lg gf-name">MAYURI</p>
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase opacity-80">Current Level</p>
+                        <p class="font-heading font-bold text-lg">Level 28.0 ✨</p>
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase opacity-80">Superpower</p>
+                        <p class="font-semibold">Cat Whisperer & Flower Magnet</p>
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase opacity-80">Mental Age</p>
+                        <p class="font-semibold">21 Forever (With 9 PM Bedtime)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between text-xs font-bold tracking-wider uppercase opacity-95">
+                <span>Perks: Unlimited Cake & Flowers 💐</span>
+                <span>ID: #MAYURI-28-VIP</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: v28.0 System Update Patch Notes -->
+    <section id="patch-notes" class="relative z-10 max-w-4xl mx-auto px-4 py-10">
+        <div class="bg-white/85 backdrop-blur-md rounded-3xl p-6 sm:p-8 border-4 border-purple-200 shadow-xl">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-6 border-b-2 border-pink-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-700 px-3 py-1 rounded-full">System Upgrade Complete</span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-bold text-pink-600 mt-1">🛠️ MAYURI OS — Patch Notes v28.0</h2>
+                </div>
+                <span class="text-2xl">🌸🐱✨</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-pink-50/80 p-4 rounded-2xl border border-pink-200">
+                    <h3 class="font-heading font-bold text-pink-600 text-lg mb-2">✨ New Buffs Unlocked</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 font-medium">
+                        <li>🌸 <strong>+100% Glow Up:</strong> Somehow looking better at 28 than at 22.</li>
+                        <li>🐱 <strong>Feline Magnetism:</strong> Every street cat within 500m wants to say hi.</li>
+                        <li>💐 <strong>Botanical Joy:</strong> Instant mood boost whenever fresh flowers appear.</li>
+                        <li>🧠 <strong>Zero Drama Filter:</strong> Peace of mind prioritized at all times.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50/80 p-4 rounded-2xl border border-purple-200">
+                    <h3 class="font-heading font-bold text-purple-700 text-lg mb-2">🐛 Known v28.0 Quirks</h3>
+                    <ul class="space-y-2 text-sm text-gray-700 font-medium">
+                        <li>🛋️ Canceling loud plans feels 10x better than going out.</li>
+                        <li>☕ Coffee and good snacks are now mandatory system fuel.</li>
+                        <li>🎶 Randomly meowing back at cat reels on Instagram.</li>
+                        <li>🎂 Requires 5 kittens carrying miniature cakes for maximum happiness.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Interactive "How 28 Are You?" Survey -->
+    <section id="quiz" class="relative z-10 max-w-4xl mx-auto px-4 py-10">
+        <div class="bg-white/85 backdrop-blur-md rounded-3xl p-6 sm:p-8 border-4 border-pink-200 shadow-xl">
+            <h2 class="text-2xl sm:text-3xl font-heading font-bold text-center text-pink-600 mb-2">📋 The Official Club 28 Vibe Check</h2>
+            <p class="text-center text-gray-600 text-sm mb-6">Check off everything that applies to unlock your 28th Birthday Verdict!</p>
+
+            <div class="space-y-3 max-w-xl mx-auto mb-6">
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-pink-50/70 border border-pink-200 cursor-pointer hover:bg-pink-100/60 transition">
+                    <input type="checkbox" class="quiz-check w-5 h-5 accent-pink-500 rounded" onchange="updateQuizScore()">
+                    <span class="text-sm sm:text-base font-medium">Will stop mid-conversation to point out a cute cat 🐱</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-pink-50/70 border border-pink-200 cursor-pointer hover:bg-pink-100/60 transition">
+                    <input type="checkbox" class="quiz-check w-5 h-5 accent-pink-500 rounded" onchange="updateQuizScore()">
+                    <span class="text-sm sm:text-base font-medium">Loves aesthetic flowers, cake, and cosy vibes 🌸🎂</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-pink-50/70 border border-pink-200 cursor-pointer hover:bg-pink-100/60 transition">
+                    <input type="checkbox" class="quiz-check w-5 h-5 accent-pink-500 rounded" onchange="updateQuizScore()">
+                    <span class="text-sm sm:text-base font-medium">Says "I'm tired" even after a full night's sleep 😴</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-pink-50/70 border border-pink-200 cursor-pointer hover:bg-pink-100/60 transition">
+                    <input type="checkbox" class="quiz-check w-5 h-5 accent-pink-500 rounded" onchange="updateQuizScore()">
+                    <span class="text-sm sm:text-base font-medium">Still feels 22 inside (just with better taste!) ✨</span>
+                </label>
+            </div>
+
+            <div id="quizResult" class="text-center bg-gradient-to-r from-pink-100 to-purple-100 p-4 rounded-2xl border border-pink-300 font-heading font-bold text-pink-700">
+                ✨ Tick the boxes above to calculate your Level 28 Certification!
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Interactive Kitty Petting & Digital Bouquet Builder -->
+    <section id="kitty-zone" class="relative z-10 max-w-4xl mx-auto px-4 py-10">
+        <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border-4 border-pink-200 shadow-xl text-center">
+            <h2 class="text-2xl sm:text-3xl font-heading font-bold text-pink-600 mb-2">🌷 Build Mayuri's Birthday Bouquet & Kitty Zone 🐾</h2>
+            <p class="text-sm text-gray-600 mb-6">Tap any flower or kitty below to add it to her digital birthday vase!</p>
+
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6">
+                <button onclick="addFlower('🌸')" class="bg-pink-100 hover:bg-pink-200 text-pink-800 font-bold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">🌸 Cherry Blossom</button>
+                <button onclick="addFlower('🌷')" class="bg-rose-100 hover:bg-rose-200 text-rose-800 font-bold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">🌷 Pink Tulip</button>
+                <button onclick="addFlower('🌻')" class="bg-amber-100 hover:bg-amber-200 text-amber-800 font-bold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">🌻 Sunflower</button>
+                <button onclick="addFlower('🌺')" class="bg-purple-100 hover:bg-purple-200 text-purple-800 font-bold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">🌺 Hibiscus</button>
+                <button onclick="addFlower('🐱')" class="bg-orange-100 hover:bg-orange-200 text-orange-800 font-bold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">🐱 Surprise Kitty</button>
+                <button onclick="clearBouquet()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold px-3 py-2 rounded-full text-xs transition">🔄 Reset</button>
+            </div>
+
+            <div id="bouquetBox" class="min-h-[110px] bg-gradient-to-b from-pink-50 to-white rounded-2xl border-2 border-dashed border-pink-300 p-4 flex flex-wrap items-center justify-center gap-2 text-3xl sm:text-4xl shadow-inner">
+                <span>🌸</span><span>🌷</span><span>🐱</span><span>🌻</span><span>🌸</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 text-center py-8 px-4 text-sm text-gray-600 font-semibold">
+        <p class="mb-1">Happy 28th Birthday, <span class="text-pink-600 font-bold gf-name">MAYURI</span>! 🎉🌸🐾</p>
+        <p class="text-xs text-gray-500">Crafted with ✨ by Mayur</p>
     </footer>
 
+    <!-- Interactive Scripts -->
     <script>
-        /* =====================================================================
-           🎂 PERMANENT BIRTHDAY CONFIGURATION 🎂
-           ===================================================================== */
-        const BIRTHDAY_CONFIG = {
-            // 1. Her name:
-            herName: "MAYURI",
+        // 1. Floating Petals Generator
+        const petalsContainer = document.getElementById('petalsContainer');
+        const petalEmojis = ['🌸', '🌷', '💮', '✨', '🐾'];
+        for (let i = 0; i < 16; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.innerText = petalEmojis[i % petalEmojis.length];
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.fontSize = (Math.random() * 12 + 14) + 'px';
+            petal.style.animationDuration = (Math.random() * 6 + 7) + 's';
+            petal.style.animationDelay = (Math.random() * 5) + 's';
+            petalsContainer.appendChild(petal);
+        }
 
-            // 2. Your name / sign-off:
-            yourName: "Mayur 🌸🐾",
-
-            // 3. Her photo filename (upload a photo named "mayuri.jpg" to your GitHub repo!)
-            photoUrl: "mayuri.jpg",
-
-            // 4. The 3 paragraphs of the birthday note:
-            letterParagraphs: [
-                "Welcome to <strong>Club 28</strong>! 🎉 Even though we joke about leveling up, random back pops, and wanting to be cozy at home by 9:30 PM, the truth is you make 28 look effortlessly cool.",
-                "You deserve all the prettiest flowers, all the cute little cats to pet, and the happiest birthday ever. Thanks for always bringing the best energy, the best laughs, and just being such an awesome person to be around.",
-                "Here’s to chapter 28—may it be filled with great coffee, spontaneous fun, delicious food, and lots of friendly kitties crossing your path! Have the best day ever! 🐾💐✨"
-            ]
-        };
-
-        /* ==========================================
-           WEB AUDIO SYNTHESIZER (Meows, Purrs, Song)
-           ========================================== */
+        // 2. Web Audio Synth Meow & Happy Birthday Meow Song
         let audioCtx = null;
-        function getAudioContext() {
-            if (!audioCtx) {
-                const AudioContext = window.AudioContext || window.webkitAudioContext;
-                audioCtx = new AudioContext();
-            }
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
+        function getAudioCtx() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             return audioCtx;
         }
 
-        // Cute synthesized "Meow" sound
-        function playCuteMeow(pitchMultiplier = 1) {
+        function playSingleMeow(freq = 520) {
             try {
-                const ctx = getAudioContext();
-                const now = ctx.currentTime;
+                const ctx = getAudioCtx();
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
-
                 osc.type = 'triangle';
-                osc.frequency.setValueAtTime(520 * pitchMultiplier, now);
-                osc.frequency.exponentialRampToValueAtTime(880 * pitchMultiplier, now + 0.14);
-                osc.frequency.exponentialRampToValueAtTime(460 * pitchMultiplier, now + 0.42);
+                osc.frequency.setValueAtTime(freq, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(freq * 1.35, ctx.currentTime + 0.09);
+                osc.frequency.exponentialRampToValueAtTime(freq * 0.85, ctx.currentTime + 0.28);
 
-                gain.gain.setValueAtTime(0.01, now);
-                gain.gain.linearRampToValueAtTime(0.22, now + 0.08);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+                gain.gain.setValueAtTime(0.18, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
 
                 osc.connect(gain);
                 gain.connect(ctx.destination);
-                osc.start(now);
-                osc.stop(now + 0.46);
-            } catch (e) {
-                // Ignore audio errors if blocked
-            }
-        }
-
-        // Cute sparkle chime
-        function playCuteChime() {
-            try {
-                const ctx = getAudioContext();
-                const notes = [523.25, 659.25, 783.99, 1046.50];
-                notes.forEach((freq, idx) => {
-                    const osc = ctx.createOscillator();
-                    const gain = ctx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.value = freq;
-                    const startTime = ctx.currentTime + idx * 0.07;
-                    gain.gain.setValueAtTime(0.15, startTime);
-                    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.35);
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
-                    osc.start(startTime);
-                    osc.stop(startTime + 0.36);
-                });
+                osc.start();
+                osc.stop(ctx.currentTime + 0.3);
             } catch (e) {}
         }
 
-        // Happy Birthday Melody in "Meow" synth notes
-        let isPlayingSong = false;
         function playMeowSong() {
-            if (isPlayingSong) return;
-            isPlayingSong = true;
-            try {
-                const ctx = getAudioContext();
-                // Happy Birthday notes (C4, C4, D4, C4, F4, E4...)
-                const melody = [
-                    { f: 523.25, d: 0.25, t: 0.0 },
-                    { f: 523.25, d: 0.25, t: 0.3 },
-                    { f: 587.33, d: 0.45, t: 0.6 },
-                    { f: 523.25, d: 0.45, t: 1.1 },
-                    { f: 698.46, d: 0.45, t: 1.6 },
-                    { f: 659.25, d: 0.80, t: 2.1 },
-
-                    { f: 523.25, d: 0.25, t: 3.0 },
-                    { f: 523.25, d: 0.25, t: 3.3 },
-                    { f: 587.33, d: 0.45, t: 3.6 },
-                    { f: 523.25, d: 0.45, t: 4.1 },
-                    { f: 783.99, d: 0.45, t: 4.6 },
-                    { f: 698.46, d: 0.85, t: 5.1 }
-                ];
-
-                melody.forEach(note => {
-                    const start = ctx.currentTime + note.t;
-                    const osc = ctx.createOscillator();
-                    const gain = ctx.createGain();
-                    osc.type = 'triangle';
-                    // Slight pitch bend for "meow" feel
-                    osc.frequency.setValueAtTime(note.f * 0.92, start);
-                    osc.frequency.exponentialRampToValueAtTime(note.f * 1.04, start + note.d * 0.4);
-                    osc.frequency.exponentialRampToValueAtTime(note.f, start + note.d);
-
-                    gain.gain.setValueAtTime(0.01, start);
-                    gain.gain.linearRampToValueAtTime(0.2, start + 0.04);
-                    gain.gain.exponentialRampToValueAtTime(0.001, start + note.d);
-
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
-                    osc.start(start);
-                    osc.stop(start + note.d + 0.02);
-                });
-
-                setTimeout(() => { isPlayingSong = false; }, 6000);
-            } catch (e) {
-                isPlayingSong = false;
-            }
-        }
-
-        /* ==========================================
-           FLOATING FLOWERS & PETALS BACKGROUND
-           ========================================== */
-        function createFloatingPetals() {
-            const container = document.getElementById('petalsContainer');
-            const floraEmojis = ['🌸', '🌷', '💮', '🌺', '🌼', '🐾', '✨'];
-            for (let i = 0; i < 18; i++) {
-                const span = document.createElement('span');
-                span.className = 'petal';
-                span.textContent = floraEmojis[Math.floor(Math.random() * floraEmojis.length)];
-                span.style.left = Math.random() * 100 + 'vw';
-                span.style.fontSize = (14 + Math.random() * 16) + 'px';
-                span.style.animationDuration = (9 + Math.random() * 12) + 's';
-                span.style.animationDelay = (-Math.random() * 15) + 's';
-                container.appendChild(span);
-            }
-        }
-
-        /* ==========================================
-           CONFETTI & CAT/FLOWER EXPLOSION ENGINE
-           ========================================== */
-        const confettiCanvas = document.getElementById('confettiCanvas');
-        const cCtx = confettiCanvas.getContext('2d');
-        let confettiParticles = [];
-
-        function resizeConfettiCanvas() {
-            confettiCanvas.width = window.innerWidth;
-            confettiCanvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeConfettiCanvas);
-        resizeConfettiCanvas();
-
-        function fireCelebrationConfetti() {
-            playCuteChime();
-            const emojis = ['🌸', '🐱', '💖', '🌷', '🎉', '🐾', '✨', '😻'];
-            for (let i = 0; i < 55; i++) {
-                confettiParticles.push({
-                    x: window.innerWidth / 2 + (Math.random() - 0.5) * 180,
-                    y: window.innerHeight * 0.55,
-                    vx: (Math.random() - 0.5) * 16,
-                    vy: -Math.random() * 15 - 6,
-                    size: 18 + Math.random() * 14,
-                    emoji: emojis[Math.floor(Math.random() * emojis.length)],
-                    rotation: Math.random() * Math.PI * 2,
-                    vRot: (Math.random() - 0.5) * 0.15,
-                    gravity: 0.32
-                });
-            }
-        }
-
-        function updateConfettiLoop() {
-            cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-            for (let i = confettiParticles.length - 1; i >= 0; i--) {
-                const p = confettiParticles[i];
-                p.x += p.vx;
-                p.y += p.vy;
-                p.vy += p.gravity;
-                p.rotation += p.vRot;
-
-                cCtx.save();
-                cCtx.translate(p.x, p.y);
-                cCtx.rotate(p.rotation);
-                cCtx.font = `${p.size}px sans-serif`;
-                cCtx.textAlign = 'center';
-                cCtx.textBaseline = 'middle';
-                cCtx.fillText(p.emoji, 0, 0);
-                cCtx.restore();
-
-                if (p.y > confettiCanvas.height + 50) {
-                    confettiParticles.splice(i, 1);
-                }
-            }
-            requestAnimationFrame(updateConfettiLoop);
-        }
-
-        /* ==========================================
-           HERO INTERACTIONS (CAT MEOW & CANDLES)
-           ========================================== */
-        function spawnClickParticle(x, y, text) {
-            const el = document.createElement('div');
-            el.className = 'click-particle font-heading font-bold text-lg sm:text-xl select-none';
-            el.style.left = (x - 20) + 'px';
-            el.style.top = (y - 20) + 'px';
-            el.textContent = text;
-            document.body.appendChild(el);
-            setTimeout(() => el.remove(), 1000);
+            const notes = [392, 392, 440, 392, 523, 493, 392, 392, 440, 392, 587, 523];
+            notes.forEach((n, idx) => {
+                setTimeout(() => playSingleMeow(n), idx * 320);
+            });
+            launchConfetti();
         }
 
         function triggerHeroCatMeow(e) {
-            playCuteMeow(1.1);
-            const phrases = ['Meow! Happy 28th! 🐱💖', 'Purrrr~ 🌸', 'Welcome to Club 28! 🐾', 'So Pretty! 😻🌷'];
-            const pick = phrases[Math.floor(Math.random() * phrases.length)];
-            spawnClickParticle(e.clientX || window.innerWidth / 2, e.clientY || 300, pick);
+            playSingleMeow(540);
+            const particle = document.createElement('div');
+            particle.className = 'click-particle text-2xl font-bold text-pink-600';
+            particle.style.left = (e.clientX - 20) + 'px';
+            particle.style.top = (e.clientY - 20) + 'px';
+            particle.innerText = 'Meow! 🐾🌸';
+            document.body.appendChild(particle);
+            setTimeout(() => particle.remove(), 1000);
         }
 
-        let candlesLit = true;
+        // 3. Blow Out Candles + Confetti
         function blowOutCandles() {
             const flames = document.getElementById('flamesWrapper');
-            const btnText = document.getElementById('blowBtnText');
-            const instr = document.getElementById('candleInstruction');
-
-            if (candlesLit) {
-                candlesLit = false;
-                flames.style.opacity = '0';
-                btnText.textContent = 'Relight 28th Candles 🔥';
-                instr.textContent = '✨ YAY! Happy 28th Birthday! Your wish is officially on its way! ✨';
-                fireCelebrationConfetti();
-                playMeowSong();
-            } else {
-                candlesLit = true;
-                flames.style.opacity = '1';
-                btnText.textContent = 'Blow Out Candles!';
-                instr.textContent = 'Click the candles or the button below to blow them out!';
-                playCuteChime();
-            }
+            const instruction = document.getElementById('candleInstruction');
+            const blowBtn = document.getElementById('blowBtn');
+            flames.style.opacity = '0';
+            instruction.innerText = '🎉 Wish Locked In! Happy 28th Birthday, Mayuri! 🌸🐾';
+            blowBtn.innerText = '✨ Relight Candles';
+            blowBtn.onclick = relightCandles;
+            launchConfetti();
+            playSingleMeow(600);
         }
 
-        /* ==========================================
-           3D HOLOGRAPHIC VIP CARD TILT & STAMP
-           ========================================== */
-        const holoCard = document.getElementById('holoCard');
-        holoCard.addEventListener('mousemove', (e) => {
-            const rect = holoCard.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -10;
-            const rotateY = ((x - centerX) / centerX) * 10;
-            holoCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-        });
-        holoCard.addEventListener('mouseleave', () => {
-            holoCard.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)';
-        });
-
-        function stampVipCard() {
-            playCuteMeow(1.2);
-            const badge = document.getElementById('vipStampBadge');
-            badge.textContent = '✅ CERTIFIED CLUB 28 VIP';
-            badge.className = 'bg-green-400 text-white px-3 py-1 rounded-full font-bold shadow animate-pulse';
-            fireCelebrationConfetti();
+        function relightCandles() {
+            const flames = document.getElementById('flamesWrapper');
+            const instruction = document.getElementById('candleInstruction');
+            const blowBtn = document.getElementById('blowBtn');
+            flames.style.opacity = '1';
+            instruction.innerText = 'Click the candles or the button below to blow them out!';
+            blowBtn.innerText = '💨 Blow Out Candles';
+            blowBtn.onclick = blowOutCandles;
         }
 
-        /* ==========================================
-           RUNAWAY "STILL 21" BUTTON SURVEY
-           ========================================== */
-        let dodgeCount = 0;
-        let yesScale = 1;
-        const funnyNoTexts = [
-            "No, I'm still 21 😤",
-            "Wait, 21 plus 7 years! 🏃‍♀️",
-            "Nice try! Too slow! 🐱",
-            "Accept Club 28!! 🌸",
-            "Error 404: Age 21 Not Found 😂",
-            "Just click YES already! ✨"
-        ];
-
-        function dodgeNoButton(e) {
-            if (e) e.preventDefault();
-            dodgeCount++;
-            playCuteMeow(0.85 + Math.random() * 0.4);
-
-            const arena = document.getElementById('runawayArena');
-            const noBtn = document.getElementById('noQuizBtn');
-            const yesBtn = document.getElementById('yesQuizBtn');
-            const counterText = document.getElementById('dodgeCounterText');
-
-            const maxX = Math.max(20, arena.clientWidth - noBtn.offsetWidth - 20);
-            const maxY = Math.max(20, arena.clientHeight - noBtn.offsetHeight - 20);
-
-            const randomX = Math.floor(Math.random() * maxX);
-            const randomY = Math.floor(Math.random() * maxY);
-
-            noBtn.style.position = 'absolute';
-            noBtn.style.left = randomX + 'px';
-            noBtn.style.top = randomY + 'px';
-            noBtn.textContent = funnyNoTexts[dodgeCount % funnyNoTexts.length];
-
-            // Grow the YES button slightly each time she tries to click No
-            yesScale = Math.min(1.35, yesScale + 0.06);
-            yesBtn.style.transform = `scale(${yesScale})`;
-
-            counterText.textContent = `😹 Denial Attempts: ${dodgeCount} — The "Still 21" button refuses to be clicked!`;
-        }
-
-        function acceptQuizYes() {
-            playMeowSong();
-            fireCelebrationConfetti();
-            document.getElementById('quizVictoryBox').classList.remove('hidden');
-            document.getElementById('noQuizBtn').style.display = 'none';
-            document.getElementById('dodgeCounterText').textContent = '✨ Official Club 28 VIP Status Confirmed! ✨';
-        }
-
-        /* ==========================================
-           KITTY PETTING STATION & BOUQUET BUILDER
-           ========================================== */
-        let petCount = 0;
-        const kittyFaces = ['🐱', '😺', '😸', '😻', '😽', '🐾'];
-        const kittyBubbles = [
-            'Purrrrr~ 🌸',
-            'Meow! Happy 28th! 🎉',
-            'More head scratches! 🐾',
-            'Club 28 VIP! 🌷',
-            'So cozy~ 😻',
-            'Best Birthday Ever! ✨'
-        ];
-
-        function petTheKitty(e) {
-            petCount++;
-            playCuteMeow(0.95 + (petCount % 5) * 0.06);
-
-            const faceEl = document.getElementById('kittyFaceEmoji');
-            const bubbleEl = document.getElementById('kittyMoodBubble');
-            const countEl = document.getElementById('petCountDisplay');
-            const barEl = document.getElementById('petProgressBar');
-            const msgEl = document.getElementById('kittyUnlockMsg');
-
-            faceEl.textContent = kittyFaces[petCount % kittyFaces.length];
-            bubbleEl.textContent = kittyBubbles[petCount % kittyBubbles.length];
-            countEl.textContent = `${petCount} / 28 🐾`;
-
-            const pct = Math.min(100, (petCount / 28) * 100);
-            barEl.style.width = pct + '%';
-
-            const clickX = e.clientX || window.innerWidth / 2;
-            const clickY = e.clientY || window.innerHeight / 2;
-            spawnClickParticle(clickX, clickY, ['✨', '🌸', '🐾', '😻'][petCount % 4]);
-
-            if (petCount === 28) {
-                msgEl.textContent = '🎉 28 PETS UNLOCKED! Maximum Birthday Purr Power Achieved! 🎉';
-                msgEl.className = 'text-xs font-bold text-pink-600 mt-2 animate-bounce';
-                fireCelebrationConfetti();
-            } else if (petCount > 28) {
-                msgEl.textContent = `Bonus Purrs! ${petCount} pets of pure birthday luck! 🐾✨`;
-            }
-        }
-
-        const bouquetPresets = [
-            {
-                icons: '🌸🐱🌷😻🌺🌻🐾🌹',
-                text: '"A bouquet of pink roses, tulips, and two sleepy kittens for the coolest 28-year-old around!"'
-            },
-            {
-                icons: '🌻😸🌼💐🐾🌷😻🌸',
-                text: '"Sunflowers and golden purrs to brighten every single day of your 28th year!"'
-            },
-            {
-                icons: '🌷😽🌹✨🌸🐾🌺😻',
-                text: '"Warning: This bouquet contains 100% good vibes and mischievous little paws!"'
-            },
-            {
-                icons: '🌺😻🌸👑🐱🌷✨💐',
-                text: '"The Royal Club 28 Arrangement—fit only for the Certified Cutie & Chief Cat Officer!"'
-            },
-            {
-                icons: '🌼🐾🌸😺🌻🌷✨🌹',
-                text: '"Fresh blooms that never wilt and kittens that never stop purring for your birthday!"'
-            }
-        ];
-        let bouquetIdx = 0;
-
-        function generateNewBouquet() {
-            playCuteChime();
-            bouquetIdx = (bouquetIdx + 1) % bouquetPresets.length;
-            const disp = document.getElementById('bouquetDisplay');
-            const comp = document.getElementById('bouquetCompliment');
-
-            disp.style.transform = 'scale(0.8)';
+        // 4. Birthday Kitty Reel Controls
+        function scrollToReelAndPlay() {
+            const section = document.getElementById('kitty-reel');
+            const video = document.getElementById('bdayReelVideo');
+            const btn = document.getElementById('reelPlayBtn');
+            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
             setTimeout(() => {
-                disp.textContent = bouquetPresets[bouquetIdx].icons;
-                comp.textContent = bouquetPresets[bouquetIdx].text;
-                disp.style.transform = 'scale(1.05)';
-                setTimeout(() => { disp.style.transform = 'scale(1)'; }, 150);
-            }, 150);
+                video.play();
+                btn.innerText = '⏸️ Pause Reel';
+                launchConfetti();
+            }, 500);
         }
 
-        /* ==========================================
-           ENVELOPE & INITIALIZATION
-           ========================================== */
-        function openBirthdayLetter() {
-            playCuteChime();
-            document.getElementById('envelopeClosed').classList.add('hidden');
-            document.getElementById('envelopeOpened').classList.remove('hidden');
-            fireCelebrationConfetti();
+        function toggleReelPlay() {
+            const video = document.getElementById('bdayReelVideo');
+            const btn = document.getElementById('reelPlayBtn');
+            if (video.paused) {
+                video.play();
+                btn.innerText = '⏸️ Pause Reel';
+            } else {
+                video.pause();
+                btn.innerText = '▶️ Play with Sound';
+            }
         }
 
-        function cornerCatSurprise(e) {
-            playCuteMeow(1.25);
-            spawnClickParticle(e.clientX - 40, e.clientY - 30, 'Meow! Happy 28th! 🌸🐾');
+        // 5. Quiz Score Logic
+        function updateQuizScore() {
+            const checks = document.querySelectorAll('.quiz-check:checked').length;
+            const res = document.getElementById('quizResult');
+            if (checks === 0) {
+                res.innerText = '✨ Tick the boxes above to calculate your Level 28 Certification!';
+            } else if (checks <= 2) {
+                res.innerText = `🌸 ${checks}/4 — Officially Entering Cozy Club 28 Era!`;
+            } else {
+                res.innerText = `👑 ${checks}/4 — 100% Certified Club 28 Legend & Cat Whisperer! 🎉`;
+                if (checks === 4) launchConfetti();
+            }
         }
 
-        function applyBirthdayConfig() {
-            if (BIRTHDAY_CONFIG.herName) {
-                document.querySelectorAll('.gf-name').forEach(el => {
-                    el.textContent = BIRTHDAY_CONFIG.herName;
+        // 6. Bouquet Builder
+        function addFlower(emoji) {
+            const box = document.getElementById('bouquetBox');
+            const span = document.createElement('span');
+            span.className = ' inline-block animate-bounce';
+            span.innerText = emoji;
+            box.appendChild(span);
+            playSingleMeow(480);
+        }
+
+        function clearBouquet() {
+            document.getElementById('bouquetBox').innerHTML = '<span>🌸</span>';
+        }
+
+        // 7. Lightweight Confetti Canvas
+        const canvas = document.getElementById('confettiCanvas');
+        const ctx = canvas.getContext('2d');
+        let confettiPieces = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function launchConfetti() {
+            const colors = ['#FF8FAB', '#FB6F92', '#E2D4F0', '#FFD166', '#A8DADC'];
+            for (let i = 0; i < 65; i++) {
+                confettiPieces.push({
+                    x: Math.random() * canvas.width,
+                    y: -20,
+                    size: Math.random() * 8 + 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: Math.random() * 3 + 2.5,
+                    speedX: (Math.random() - 0.5) * 3,
+                    rotation: Math.random() * 360
                 });
             }
-            if (BIRTHDAY_CONFIG.yourName) {
-                const sigEl = document.getElementById('bfSignatureDisplay');
-                if (sigEl) sigEl.textContent = BIRTHDAY_CONFIG.yourName;
-            }
-            if (BIRTHDAY_CONFIG.photoUrl) {
-                const heroImg = document.getElementById('heroMayuriPhoto');
-                const vipImg = document.getElementById('vipMayuriPhoto');
-                if (heroImg) heroImg.src = BIRTHDAY_CONFIG.photoUrl;
-                if (vipImg) vipImg.src = BIRTHDAY_CONFIG.photoUrl;
-            }
-            if (Array.isArray(BIRTHDAY_CONFIG.letterParagraphs) && BIRTHDAY_CONFIG.letterParagraphs.length > 0) {
-                const bodyEl = document.getElementById('customLetterBody');
-                if (bodyEl) {
-                    bodyEl.innerHTML = BIRTHDAY_CONFIG.letterParagraphs
-                        .map(p => `<p>${p}</p>`)
-                        .join('');
-                }
-            }
         }
 
-        window.onload = function () {
-            applyBirthdayConfig();
-            createFloatingPetals();
-            updateConfettiLoop();
-        };
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confettiPieces.forEach((p, idx) => {
+                p.y += p.speedY;
+                p.x += p.speedX;
+                p.rotation += 4;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate((p.rotation * Math.PI) / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctx.restore();
+                if (p.y > canvas.height) confettiPieces.splice(idx, 1);
+            });
+            requestAnimationFrame(animateConfetti);
+        }
+        animateConfetti();
     </script>
 </body>
 </html>
